@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "datamirror"
+version = "0.1.0"
+description = "Import your data exports from Google, Meta, Amazon, Apple, and TikTok into a unified local SQLite database."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+authors = [
+    {name = "Zanden Kane"}
+]
+dependencies = [
+    "click>=8.1",
+    "fastapi>=0.104",
+    "uvicorn>=0.24",
+    "jinja2>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-asyncio>=0.23",
+    "httpx>=0.25",
+]
+
+[project.scripts]
+datamirror = "datamirror.cli:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+datamirror = [
+    "web/static/*",
+    "web/templates/**/*",
+    "templates/*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
