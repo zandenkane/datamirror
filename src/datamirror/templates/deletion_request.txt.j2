@@ -1,0 +1,45 @@
+Data Deletion Request
+{{ date }}
+
+To: {{ platform_name }}
+{% if platform_email %}({{ platform_email }}){% endif %}
+
+From: {{ name }}
+
+Subject: Request for Deletion of Personal Data
+{% if regulation == "gdpr" %}
+Dear Data Protection Officer,
+
+I am writing to request the erasure of all personal data you hold about me, pursuant to Article 17 of the General Data Protection Regulation (GDPR), also known as the "right to be forgotten."
+
+Under Article 17 of the GDPR, I have the right to obtain the erasure of personal data concerning me without undue delay. The controller shall have the obligation to erase personal data without undue delay where one of the following grounds applies:
+
+(a) the personal data are no longer necessary in relation to the purposes for which they were collected or otherwise processed;
+(b) I withdraw my consent on which the processing is based;
+(c) I object to the processing and there are no overriding legitimate grounds for the processing.
+
+I request that you:
+1. Delete all personal data you hold about me
+2. Cease any further processing of my personal data
+3. Inform any third parties to whom my data has been disclosed of this deletion request
+4. Confirm the completion of this request in writing within 30 days
+
+Under the GDPR, you are required to respond to this request within one month of receipt.
+{% elif regulation == "ccpa" %}
+Dear Privacy Team,
+
+I am writing to request the deletion of all personal information you have collected about me, pursuant to the California Consumer Privacy Act (CCPA), Section 1798.105.
+
+Under the CCPA, I have the right to request that a business delete any personal information about me which the business has collected from me.
+
+I request that you:
+1. Delete all personal information you have collected about me
+2. Direct any service providers to delete my personal information from their records
+3. Confirm the completion of this request in writing within 45 days
+
+Under the CCPA, you are required to respond to this request within 45 days of receipt.
+{% endif %}
+Please contact me if you need any additional information to verify my identity or process this request.
+
+Sincerely,
+{{ name }}

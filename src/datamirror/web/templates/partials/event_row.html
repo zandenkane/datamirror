@@ -1,0 +1,14 @@
+<div class="event-row">
+    <div class="event-meta">
+        <span class="event-platform">{{ event.platform }}</span>
+        <span class="event-category">{{ event.category }}</span>
+        <span class="event-time">{{ event.timestamp[:19] if event.timestamp else "unknown" }}</span>
+    </div>
+    <div class="event-title">{{ event.title }}</div>
+    {% if event.body %}
+    <div class="event-body">{{ event.body[:200] }}</div>
+    {% endif %}
+    {% if event.url %}
+    <div class="event-url"><a href="{{ event.url }}" target="_blank" rel="noopener">{{ event.url[:60] }}{% if event.url|length > 60 %}...{% endif %}</a></div>
+    {% endif %}
+</div>

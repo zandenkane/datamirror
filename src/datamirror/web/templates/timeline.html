@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}datamirror - Timeline{% endblock %}
+
+{% block content %}
+<h1>Timeline</h1>
+
+<form class="filters" method="get" action="/timeline">
+    <select name="platform">
+        <option value="">All platforms</option>
+        {% for p in ["google", "meta", "amazon", "apple", "tiktok"] %}
+        <option value="{{ p }}" {% if platform == p %}selected{% endif %}>{{ p }}</option>
+        {% endfor %}
+    </select>
+
+    <select name="category">
+        <option value="">All categories</option>
+        {% for c in ["search", "post", "message", "purchase", "watch", "location", "comment", "login", "browse"] %}
+        <option value="{{ c }}" {% if category == c %}selected{% endif %}>{{ c }}</option>
+        {% endfor %}
+    </select>
+
+    <input type="date" name="after" value="{{ after or '' }}" placeholder="After">
+    <input type="date" name="before" value="{{ before or '' }}" placeholder="Before">
+
+    <button type="submit">Filter</button>
+</form>
+
+<div class="event-list" id="event-list">
+    {% for event in events %}
+    {% include "partials/event_row.html" %}
+    {% endfor %}
+</div>
+
+{% if events | length >= limit %}
+<div id="load-more"
+     hx-get="/timeline?platform={{ platform or '' }}&category={{ category or '' }}&after={{ after or '' }}&before={{ before or '' }}&limit={{ limit }}&offset={{ offset + limit }}"
+     hx-trigger="revealed"
+     hx-swap="outerHTML"
+     hx-target="#load-more"
+     class="load-more">
+    Loading more...
+</div>
+{% endif %}
+{% endblock %}

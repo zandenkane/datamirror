@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}datamirror - Dashboard{% endblock %}
+
+{% block content %}
+<h1>Dashboard</h1>
+
+{% if stats.platforms %}
+<div class="stats-summary">
+    <div class="stat-card total">
+        <div class="stat-number">{{ "{:,}".format(stats.total_events) }}</div>
+        <div class="stat-label">Total Events</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-number">{{ stats.platforms | length }}</div>
+        <div class="stat-label">Platforms</div>
+    </div>
+</div>
+
+<h2>By Platform</h2>
+<div class="platform-grid">
+{% for platform, info in stats.platforms.items() %}
+    <div class="platform-card">
+        <h3>{{ platform }}</h3>
+        <div class="platform-count">{{ "{:,}".format(info.count) }} events</div>
+        <div class="platform-range">{{ info.earliest[:10] }} to {{ info.latest[:10] }}</div>
+        <div class="categories">
+            {% for cat, cnt in info.categories.items() | sort %}
+            <span class="category-badge">{{ cat }}: {{ "{:,}".format(cnt) }}</span>
+            {% endfor %}
+        </div>
+        <a href="/timeline?platform={{ platform }}" class="view-link">View timeline</a>
+    </div>
+{% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+    <h2>No data imported yet</h2>
+    <p>Run <code>datamirror import <platform> <path></code> to get started.</p>
+    <p>Supported platforms: google, meta, amazon, apple, tiktok</p>
+</div>
+{% endif %}
+{% endblock %}
