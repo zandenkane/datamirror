@@ -1,0 +1,61 @@
+{
+  "Activity": {
+    "Video Browsing History": {
+      "VideoList": [
+        {
+          "VideoLink": "https://www.tiktok.com/@user1/video/111",
+          "Date": "2024-03-15 10:00:00"
+        },
+        {
+          "VideoLink": "https://www.tiktok.com/@user2/video/222",
+          "Date": "2024-03-14 20:30:00"
+        },
+        {
+          "VideoLink": "https://www.tiktok.com/@user3/video/333",
+          "Date": "2024-03-14 15:00:00"
+        }
+      ]
+    },
+    "Like List": {
+      "ItemFavoriteList": [
+        {
+          "VideoLink": "https://www.tiktok.com/@user1/video/111",
+          "Date": "2024-03-15 10:01:00"
+        }
+      ]
+    },
+    "Comment History": {
+      "CommentsList": [
+        {
+          "Comment": "This is great!",
+          "Date": "2024-03-15 10:02:00"
+        },
+        {
+          "Comment": "Thanks for sharing",
+          "Date": "2024-03-14 20:31:00"
+        }
+      ]
+    },
+    "Favorite Videos": {
+      "FavoriteVideoList": [
+        {
+          "VideoLink": "https://www.tiktok.com/@user4/video/444",
+          "Date": "2024-03-13 12:00:00"
+        }
+      ]
+    }
+  },
+  "Comment": {
+    "Comments": {
+      "CommentsList": []
+    }
+  },
+  "Profile": {
+    "Profile Information": {
+      "ProfileMap": {
+        "userName": "testuser",
+        "likesReceived": "1234"
+      }
+    }
+  }
+}

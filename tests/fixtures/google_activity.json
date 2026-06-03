@@ -1,0 +1,47 @@
+[
+  {
+    "header": "Search",
+    "title": "Searched for python sqlite tutorial",
+    "time": "2024-03-15T10:30:00.000Z",
+    "subtitles": [
+      {
+        "name": "python sqlite3 tutorial",
+        "url": "https://www.google.com/search?q=python+sqlite+tutorial"
+      }
+    ]
+  },
+  {
+    "header": "Search",
+    "title": "Searched for fastapi htmx example",
+    "time": "2024-03-15T11:00:00.000Z",
+    "subtitles": [
+      {
+        "name": "fastapi htmx",
+        "url": "https://www.google.com/search?q=fastapi+htmx"
+      }
+    ]
+  },
+  {
+    "header": "Chrome",
+    "title": "Visited stackoverflow.com",
+    "time": "2024-03-15T11:15:00.000Z",
+    "subtitles": [
+      {
+        "name": "Stack Overflow",
+        "url": "https://stackoverflow.com"
+      }
+    ]
+  },
+  {
+    "header": "YouTube",
+    "title": "Watched Python Tutorial for Beginners",
+    "time": "2024-03-14T20:00:00.000Z",
+    "subtitles": []
+  },
+  {
+    "header": "Maps",
+    "title": "Searched for coffee shop near me",
+    "time": "2024-03-14T08:30:00.000Z",
+    "subtitles": []
+  }
+]
