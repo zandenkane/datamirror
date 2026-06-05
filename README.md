@@ -2,9 +2,11 @@
 
 # datamirror
 
-A local first tool that imports your data exports from Google, Meta, Amazon, Apple, and TikTok into a single SQLite database. Browse everything through a CLI or a web dashboard, search across platforms, export filtered data, and generate GDPR/CCPA deletion request letters.
+ever downloaded your Google Takeout and opened it to find 47 nested folders of JSON files that mean absolutely nothing to a human? yeah. this fixes that.
 
-All your data stays on your machine. No accounts, no cloud, no tracking.
+datamirror takes your data exports from Google, Meta, Amazon, Apple, and TikTok, throws them all into one SQLite database, and lets you actually browse what these companies have on you. CLI or web dashboard, your pick. can also generate GDPR/CCPA deletion request letters if you want to tell them to knock it off.
+
+everything stays local. no accounts, no cloud, no irony.
 
 ## Features
 
