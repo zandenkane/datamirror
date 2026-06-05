@@ -1,6 +1,12 @@
-![CI](https://github.com/zandenkane/datamirror/actions/workflows/ci.yml/badge.svg)
+<p align="center">
+  <img src="assets/banner.png" alt="datamirror" width="100%">
+</p>
 
-# datamirror
+<p align="center">
+  <a href="https://github.com/zandenkane/datamirror/actions/workflows/ci.yml"><img src="https://github.com/zandenkane/datamirror/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <img src="https://img.shields.io/badge/python-3776AB?style=flat&logo=python&logoColor=white" alt="python">
+  <img src="https://img.shields.io/badge/license-MIT-green" alt="MIT License">
+</p>
 
 ever downloaded your Google Takeout and opened it to find 47 nested folders of JSON files that mean absolutely nothing to a human? yeah. this fixes that.
 
@@ -16,40 +22,6 @@ everything stays local. no accounts, no cloud, no irony.
 - **Web dashboard** with a FastAPI + HTMX server rendered UI, filterable timeline, stats overview, and JSON API endpoints
 - **No JavaScript build step** since HTMX is vendored as a single file alongside Jinja2 templates and plain CSS
 
-
-## what it looks like
-
-```
-$ datamirror import ~/Downloads/takeout-20260501.zip --service google
-[+] detected Google Takeout archive
-[+] parsing My Activity...              4,218 events
-[+] parsing Location History...         47,291 points
-[+] parsing YouTube watch history...    1,847 videos
-[+] parsing Chrome browsing history...  12,403 pages
-[+] parsing Search history...           8,912 queries
-[+] total imported: 74,671 records in 3.2s
-
-$ datamirror stats
-service     records    date range              top category
-google      74,671     2019-01-03 - 2026-05-28  search (8,912)
-meta        12,440     2020-06-14 - 2026-05-15  messages (9,201)
-amazon       3,891     2021-03-22 - 2026-04-30  orders (2,104)
-tiktok       8,204     2022-11-01 - 2026-05-20  watch history (7,856)
-total       99,206
-```
-
-```mermaid
-graph LR
-    A[Google Takeout ZIP] --> P[Parser]
-    B[Meta Export ZIP] --> P
-    C[Amazon Data ZIP] --> P
-    D[Apple Privacy ZIP] --> P
-    E[TikTok Export ZIP] --> P
-    P --> DB[(SQLite)]
-    DB --> CLI[CLI queries]
-    DB --> WEB[Web dashboard]
-    DB --> DEL[Deletion request generator]
-```
 
 ## Install
 
