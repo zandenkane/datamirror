@@ -44,11 +44,15 @@ CREATE TABLE IF NOT EXISTS imports (
 """
 
 
-def get_connection(db_path: Path | None = None) -> sqlite3.Connection:
+def get_connection(db_path: str | Path | None = None) -> sqlite3.Connection:
     """Open (or create) the SQLite database and ensure the schema exists."""
-    path = db_path or DEFAULT_DB_PATH
-    path.parent.mkdir(parents=True, exist_ok=True)
-    conn = sqlite3.connect(str(path))
+    path = db_path if db_path is not None else DEFAULT_DB_PATH
+    if str(path) == ":memory:":
+        conn = sqlite3.connect(":memory:")
+    else:
+        path = Path(path)
+        path.parent.mkdir(parents=True, exist_ok=True)
+        conn = sqlite3.connect(str(path))
     conn.row_factory = sqlite3.Row
     conn.executescript(SCHEMA_SQL)
     return conn
