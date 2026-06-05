@@ -23,6 +23,16 @@ everything stays local. no accounts, no cloud, no irony.
 - **No JavaScript build step** since HTMX is vendored as a single file alongside Jinja2 templates and plain CSS
 
 
+
+<p align="center">
+  <img src="assets/breakdown.png" alt="your data, by platform" width="90%">
+</p>
+
+<p align="center">
+  <img src="assets/timeline.png" alt="activity over time" width="90%">
+</p>
+
+
 ## Install
 
 ```bash
